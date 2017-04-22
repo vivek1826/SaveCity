@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class SingleView extends AppCompatActivity {
     DatabaseHelperTwo db2;
     String[] date,time,query;
     TextView date1,time1,com1;
+    ProgressBar progressBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +38,16 @@ public class SingleView extends AppCompatActivity {
         date = db2.dat();
         time = db2.tim();
         query = db2.com();
-
+progressBar=(ProgressBar)findViewById(R.id.progressBar2);
+        progressBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressBar.setProgress(50);
+            }
+        });
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
-      //  imageView.setImageResource(imageAdapter.mThumbIds[position]);
+      //imageView.setImageResource(imageAdapter.mThumbIds[position]);
         imageView.setImageBitmap(bitmapArray.get(position));
         date1.setText(date[position]);
         time1.setText(time[position]);

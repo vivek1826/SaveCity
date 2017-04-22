@@ -36,13 +36,13 @@
         android:id="@+id/texttime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textdate"
-        android:layout_alignStart="@+id/textdate"
-        android:layout_below="@+id/textdate"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="22dp"
         android:text="TextView"
         android:textColor="@android:color/holo_orange_dark"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_below="@+id/textdate"
+        android:layout_alignLeft="@+id/textdate"
+        android:layout_alignStart="@+id/textdate" />
 
     <TextView
         android:id="@+id/comm"
@@ -70,13 +70,19 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/texttime"
-        android:layout_alignBottom="@+id/texttime"
-        android:layout_alignEnd="@+id/textView11"
-        android:layout_alignRight="@+id/textView11"
         android:text="Time : "
         android:textColor="@android:color/holo_orange_light"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:layout_above="@+id/SingleView"
+        android:layout_alignLeft="@+id/textView11"
+        android:layout_alignStart="@+id/textView11" />
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:layout_below="@+id/SingleView" />
 
 
 </RelativeLayout>

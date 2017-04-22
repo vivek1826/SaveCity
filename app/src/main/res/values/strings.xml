@@ -133,4 +133,5 @@
     <string name="r41">100% of wards</string>
     <string name="r42">60%-79% of wards</string>
     <string name="r43"><![CDATA[<60% of wards]]></string>
+    <string name="title_activity_new_logged_in">NewLoggedIn</string>
 </resources>
