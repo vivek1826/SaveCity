@@ -70,8 +70,8 @@ public class Loggedin extends AppCompatActivity {
         query = (EditText) findViewById(R.id.query);
         textloc = (TextView) findViewById(R.id.textloc);
         address1 =(TextView)findViewById(R.id.address);
-        loc = (Button)findViewById(R.id.loc);
 
+        loc = (Button)findViewById(R.id.loc);
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         listener = new LocationListener() {
             @Override
@@ -242,7 +242,7 @@ default:
             });
         }
 
-            private void getLocation() {
+           /* private void getLocation() {
                 loc = (Button) findViewById(R.id.loc);
                 loc.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -277,7 +277,7 @@ default:
                     e.printStackTrace();
                 }
                 return curcity;
-            }
+            }*/
 
             public boolean hasCamera() {
                 return getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA_ANY);
@@ -313,7 +313,7 @@ default:
                 add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        boolean inserted = myDb.addEntry(date.getText().toString(), time.getText().toString(), query.getText().toString(), a);
+                        boolean inserted = myDb.addEntry(date.getText().toString(), time.getText().toString(), query.getText().toString(),address1.getText().toString(), a);
                         if (inserted == true) {
                             Intent intent = new Intent(Loggedin.this, Float.class);
                             startActivity(intent);

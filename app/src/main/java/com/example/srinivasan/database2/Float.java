@@ -41,8 +41,7 @@ public class Float extends AppCompatActivity {
         RecyclerView recyclerView;
         RecyclerView.LayoutManager layoutManager;
         RecyclerView.Adapter adapter;
-        recyclerView =
-                (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
@@ -71,7 +70,7 @@ public class Float extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                  Intent intent=new Intent(Float.this,Loggedin.class);
-                startActivity(intent);
+                 startActivity(intent);
             }
         });
     }
