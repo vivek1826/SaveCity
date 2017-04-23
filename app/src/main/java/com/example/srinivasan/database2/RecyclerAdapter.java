@@ -104,7 +104,7 @@ String[] a,b,c;
         try {
             viewHolder.itemImage.setImageBitmap(bitmapArray.get(i));
         }catch (IndexOutOfBoundsException e){
-
+            viewHolder.itemImage.setImageBitmap(null);
         }
     }
 

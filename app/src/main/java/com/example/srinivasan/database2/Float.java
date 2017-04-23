@@ -51,7 +51,7 @@ public class Float extends AppCompatActivity {
 
         button=(Button)findViewById(R.id.button);
         databaseHelperTwo=new DatabaseHelperTwo(getApplicationContext());
-        databaseHelperTwo.searchpass();
+        //databaseHelperTwo.searchpass();
         s=new Session(this);
 
         if (!s.loggedIn()){

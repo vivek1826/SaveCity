@@ -1,7 +1,9 @@
 package com.example.srinivasan.database2;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +13,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
@@ -19,12 +22,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static android.R.attr.editTextStyle;
 import static android.R.attr.handle;
 
-public class SingleView extends AppCompatActivity {
+public class SingleView extends AppCompatActivity implements View.OnClickListener{
     DatabaseHelperTwo db2;
     String[] date, time, query , locat;
-    TextView date1, time1, com1 ,location ;
+    TextView date1, time1, com1 ,location ,comments,typecom,butcom;
     ProgressBar progressBar;
     FloatingActionButton fab;
     ProgressDialog progress;
@@ -32,7 +36,10 @@ public class SingleView extends AppCompatActivity {
     private TextView textView;
     PopupWindow popupWindow;
     private Handler handler = new Handler();
-
+    SharedPreferences sharedpreferences;
+    public static final String MyPREFERENCES = "MyPrefs" ;
+    public static final String textsave = null;
+    int position;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +49,15 @@ public class SingleView extends AppCompatActivity {
         time1 = (TextView) findViewById(R.id.texttime);
         com1 = (TextView) findViewById(R.id.comm);
         location = (TextView)findViewById(R.id.location);
+        comments = (TextView)findViewById(R.id.comments);
+        typecom = (EditText)findViewById(R.id.typecom);
+        butcom = (Button)findViewById(R.id.butcom);
+        butcom.setOnClickListener(this);
         // Get intent data
         popupWindow = new PopupWindow(this);
         Intent i = getIntent();
         // Selected image id
-        int position = i.getExtras().getInt("i");
+        position = i.getExtras().getInt("i");
         //ImageAdapter imageAdapter = new ImageAdapter(this);
         ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
         bitmapArray = db2.searchpass();
@@ -62,6 +73,12 @@ public class SingleView extends AppCompatActivity {
             }
         });
         */
+        sharedpreferences = getSharedPreferences("text",0);
+        //SharedPreferences.Editor sedt = sharedpreferences.edit();
+        String newtw = sharedpreferences.getString("text","");
+
+        comments.setText(newtw);
+
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
         //imageView.setImageResource(imageAdapter.mThumbIds[position]);
         imageView.setImageBitmap(bitmapArray.get(position));
@@ -71,9 +88,17 @@ public class SingleView extends AppCompatActivity {
         location.setText(locat[position]);
     }
 
+    /*public void Comment(View v){
+        String a;
+        a = typecom.getText().toString();
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString(textsave, a);
+        editor.commit();
+        comments.append(++i + " . "+ a + "\n\n");
 
+    }
     public void pro(View v) {
-        /*
+
         progress = new ProgressDialog(SingleView.this);
         progress.setMax(100);
         progress.setMessage("Work on Progress");
@@ -104,7 +129,17 @@ public class SingleView extends AppCompatActivity {
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             progress.incrementProgressBy(1);
-        }*/
+        }
+    }*/
+
+    @Override
+    public void onClick(View v) {
+        String a;
+        a = typecom.getText().toString();
+        comments.append("->"+ a + "\n\n");
+        SharedPreferences.Editor editor = sharedpreferences.edit();
+        editor.putString("text",comments.getText().toString());
+        editor.commit();
     }
 }
 

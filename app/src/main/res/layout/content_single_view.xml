@@ -141,6 +141,43 @@
                 android:text="Loc"
                 android:textColor="@android:color/holo_blue_bright"
                 android:textSize="24sp" />
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LinearLayout06"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/LinearLayout05"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Comments :"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="30sp" />
+
+            <EditText
+                android:id="@+id/typecom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/butcom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Submit Comment" />
         </LinearLayout>
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>
