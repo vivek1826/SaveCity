@@ -156,7 +156,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/r43" />
-            </RadioGroup>
+                </RadioGroup>
+                <Button
+                    android:id="@+id/feedsub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Button" />
+
 
 
         </LinearLayout>

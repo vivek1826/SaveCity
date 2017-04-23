@@ -164,14 +164,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/typecom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:hint="Comment here"
+                android:inputType="textPersonName"
+                android:singleLine="false" />
 
             <Button
                 android:id="@+id/butcom"
