@@ -17,7 +17,7 @@ import android.widget.GridView;
 public class Float extends AppCompatActivity {
     Session s;
     DatabaseHelperTwo databaseHelperTwo;
-    Button button;
+    Button button,button2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,6 +38,7 @@ public class Float extends AppCompatActivity {
         });
 
 */
+        button2= (Button)findViewById(R.id.button2);
         RecyclerView recyclerView;
         RecyclerView.LayoutManager layoutManager;
         RecyclerView.Adapter adapter;
@@ -57,7 +58,13 @@ public class Float extends AppCompatActivity {
         if (!s.loggedIn()){
             logout();
         }
-
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Float.this,Navmenu.class);
+                startActivity(i);
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

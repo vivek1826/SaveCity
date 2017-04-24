@@ -313,6 +313,7 @@ default:
                 add.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         boolean inserted = myDb.addEntry(date.getText().toString(), time.getText().toString(), query.getText().toString(),address1.getText().toString(), a);
                         if (inserted == true) {
                             Intent intent = new Intent(Loggedin.this, Float.class);

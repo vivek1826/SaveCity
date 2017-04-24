@@ -9,10 +9,11 @@
     android:background="@drawable/images">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        android:id="@+id/appBarLayout">
+        android:background="@android:color/black"
+        android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -28,16 +29,16 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="29dp"
+        android:layout_marginTop="31dp"
         android:text="Welcome , "
         android:textColor="@android:color/holo_green_light"
         android:textColorLink="@android:color/holo_blue_bright"
-        android:textSize="30sp"
+        android:textSize="18sp"
         android:layout_below="@+id/appBarLayout"
-        android:layout_toLeftOf="@+id/name2"
-        android:layout_toStartOf="@+id/name2"
-        android:layout_marginRight="34dp"
-        android:layout_marginEnd="34dp" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="57dp"
+        android:layout_marginStart="57dp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -56,22 +57,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="TextView"
+        android:textAllCaps="true"
         android:textColor="@android:color/holo_blue_bright"
-        android:textSize="30sp"
-        android:layout_marginRight="53dp"
-        android:layout_marginEnd="53dp"
+        android:textSize="18sp"
         android:layout_above="@+id/textView8"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_toRightOf="@+id/textView7"
+        android:layout_toEndOf="@+id/textView7"
+        android:layout_marginLeft="61dp"
+        android:layout_marginStart="61dp" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="300dp"
+        android:layout_marginTop="25dp"
         android:layout_below="@+id/textView8"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="23dp">
+        android:layout_alignParentStart="true">
 
     </android.support.v4.view.ViewPager>
 

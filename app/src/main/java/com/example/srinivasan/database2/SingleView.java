@@ -140,6 +140,7 @@ public class SingleView extends AppCompatActivity implements View.OnClickListene
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString("text",comments.getText().toString());
         editor.commit();
+        typecom.setText("");
     }
 }
 

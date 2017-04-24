@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/background_dark"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.srinivasan.database2.SingleView"
     tools:showIn="@layout/activity_single_view">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -22,10 +23,10 @@
             android:id="@+id/LinearLayout01"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/textView11"
@@ -34,7 +35,8 @@
                 android:paddingLeft="40dp"
                 android:text="Date : "
                 android:textColor="@android:color/holo_orange_light"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textdate"
@@ -43,15 +45,17 @@
                 android:paddingLeft="100dp"
                 android:text="TextView"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
 
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/LinearLayout02"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:layout_below="@+id/LinearLayout01">
+            android:layout_below="@+id/LinearLayout01"
+            android:orientation="horizontal">
 
 
             <TextView
@@ -61,7 +65,8 @@
                 android:paddingLeft="40dp"
                 android:text="Time : "
                 android:textColor="@android:color/holo_orange_light"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/texttime"
@@ -70,14 +75,16 @@
                 android:paddingLeft="100dp"
                 android:text="TextView"
                 android:textColor="@android:color/holo_orange_dark"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textStyle="bold|italic" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/LinearLayout03"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="horizontal"
             android:layout_below="@+id/LinearLayout02"
+            android:orientation="horizontal"
             android:weightSum="1">
 
             <ImageView
@@ -92,8 +99,9 @@
             android:id="@+id/LinearLayout04"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:layout_below="@+id/LinearLayout03">
+            android:layout_below="@+id/LinearLayout03"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
@@ -101,6 +109,7 @@
                 android:layout_height="wrap_content"
                 android:paddingLeft="40dp"
                 android:text="Query : "
+                android:textColor="@android:color/holo_green_light"
                 android:textSize="24sp" />
 
             <TextView
@@ -108,9 +117,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/SingleView"
-                android:paddingLeft="100dp"
+                android:paddingLeft="40dp"
                 android:text="TextView"
-                android:textColor="@android:color/holo_red_light"
+                android:textColor="@android:color/holo_green_light"
                 android:textSize="24sp" />
 
         </LinearLayout>
@@ -131,7 +140,8 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Location"
+                android:text="Location :"
+                android:textColor="@android:color/holo_blue_bright"
                 android:textSize="24sp" />
 
             <TextView
@@ -141,7 +151,7 @@
                 android:text="Loc"
                 android:textColor="@android:color/holo_blue_bright"
                 android:textSize="24sp" />
-            </LinearLayout>
+        </LinearLayout>
 
         <LinearLayout
             android:id="@+id/LinearLayout06"
@@ -149,6 +159,7 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/LinearLayout05"
             android:orientation="vertical"
+            android:gravity="center"
             android:paddingTop="30dp">
 
 
@@ -157,13 +168,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Comments :"
-                android:textSize="30sp" />
+                android:textColor="@android:color/holo_red_dark"
+                android:textSize="30sp"
+                android:textStyle="bold|italic" />
 
             <TextView
                 android:id="@+id/comments"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:textColor="@android:color/darker_gray"
                 android:textSize="24sp" />
 
             <EditText
@@ -173,7 +187,9 @@
                 android:ems="10"
                 android:hint="Comment here"
                 android:inputType="textPersonName"
-                android:singleLine="false" />
+                android:singleLine="false"
+                android:textColor="@color/cardview_light_background"
+                android:textColorHint="@android:color/background_light" />
 
             <Button
                 android:id="@+id/butcom"

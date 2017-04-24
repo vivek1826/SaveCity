@@ -31,7 +31,7 @@ public class Navmenu extends AppCompatActivity implements NavigationView.OnNavig
     TextView name, name2;
     ViewPager viewPager;
     SwipeAdapter adapter;
-
+Session s;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +39,7 @@ public class Navmenu extends AppCompatActivity implements NavigationView.OnNavig
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         name2 = (TextView) findViewById(R.id.name2);
-
+        s=new Session(this);
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -167,6 +167,8 @@ public class Navmenu extends AppCompatActivity implements NavigationView.OnNavig
             }
         }
         if(id == R.id.logout){
+            s.setLoggedIn(false);
+            finish();
             Intent i = new Intent(Navmenu.this,Login.class);
             Toast.makeText(getApplicationContext(),"Logged Out",Toast.LENGTH_SHORT).show();
             startActivity(i);

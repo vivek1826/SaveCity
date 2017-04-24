@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <group android:checkableBehavior="single">
         <item
@@ -8,24 +9,26 @@
             android:title="Register Complaint" />
         <item
             android:id="@+id/feedback"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@android:drawable/btn_star_big_on"
             android:title="Give Feedback" />
 
         <item
             android:id="@+id/view"
-            android:title="View all">
-        </item>
+            android:icon="@android:drawable/ic_menu_view"
+            android:title="View all"></item>
     </group>
     <group
-        android:checkableBehavior="single">
+        android:checkableBehavior="single"
+        android:enabled="true"
+        android:visible="true">
         <item
             android:id="@+id/contact"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@android:drawable/stat_sys_phone_call"
             android:title="Contact Number" />
         <item
-        android:id="@+id/email"
-        android:icon="@drawable/ic_menu_slideshow"
-        android:title="Email us" />
+            android:id="@+id/email"
+            android:icon="@android:drawable/ic_dialog_email"
+            android:title="Email us" />
         <item
             android:id="@+id/logout"
             android:title="Logout"></item>

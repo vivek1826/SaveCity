@@ -28,7 +28,7 @@ public class DatabaseHelperTwo extends SQLiteOpenHelper {
     private static final String KEY_IMAGE = "image_data";
     private static final String COLOUMMN_LOC = "LOCATION";
     SQLiteDatabase db;
-
+int j=0;
     private static final String CREATE_TABLE_IMAGE = "CREATE TABLE " +TABLE_NAME +"(ID INTEGER PRIMARY KEY AUTOINCREMENT,"+
             "DATE TEXT," + " TIME TEXT," + " CONTENT TEXT," + "LOCATION TEXT,"+ KEY_IMAGE + " BLOB);";
     public DatabaseHelperTwo(Context context) {
@@ -49,6 +49,8 @@ public class DatabaseHelperTwo extends SQLiteOpenHelper {
         cv.put(COLOUMN_CONTENT, content);
         cv.put(COLOUMMN_LOC,location);
         cv.put(KEY_IMAGE, image);
+
+
         long result = db.insert(TABLE_NAME, null, cv);
 
         if (result == -1){
@@ -97,8 +99,10 @@ public class DatabaseHelperTwo extends SQLiteOpenHelper {
                    date = cursor.getString(1);
 
                    try {
+
                           a[i]=date;
                           i++;
+                       j=i;
                    }catch (ArrayIndexOutOfBoundsException e){
                        break;
                    }
@@ -166,6 +170,9 @@ public class DatabaseHelperTwo extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         return a;
+    }
+    public  int ii(){
+        return j;
     }
 }
 

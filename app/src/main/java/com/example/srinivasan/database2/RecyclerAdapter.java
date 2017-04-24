@@ -20,35 +20,13 @@ import java.util.ArrayList;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
-
-    private String[] titles = {"Chapter One",
-            "Chapter Two",
-            "Chapter Three",
-            "Chapter Four",
-            "Chapter Five",
-            "Chapter Six",
-            "Chapter Seven",
-            "Chapter Eight"};
-
-    private String[] details = {"Item one details",
-            "Item two details", "Item three details",
-            "Item four details", "Item file details",
-            "Item six details", "Item seven details",
-            "Item eight details"};
-
-    private int[] images = { R.drawable.babysmile,
-            R.drawable.bmwz,
-            R.drawable.calvin,
-            R.drawable.clean,
-            R.drawable.cutebunny,
-            R.drawable.doggy
-             };
     private Context mContext;
     DatabaseHelperTwo db2;
     ArrayList<Bitmap> bitmapArray = new ArrayList<Bitmap>();
     // Constructor
-String[] a,b,c;
+    String[] a,b,c;
     public RecyclerAdapter(Context context) {
+
         mContext = context;
         db2=new DatabaseHelperTwo(mContext);
         bitmapArray=db2.searchpass();
@@ -111,7 +89,8 @@ String[] a,b,c;
 
     @Override
     public int getItemCount() {
-        return a.length;
+
+        return  db2.ii();
     }
 }
 
